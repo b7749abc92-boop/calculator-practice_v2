@@ -51,7 +51,15 @@ public class Main {
             ArrayList<Double> fHr = c.getrl();
             System.out.println("계산기록: " + fHr);
 
-            System.out.println("종료를 원하시면 'exit', 계속 하신다면 아무 글자를 입력해주세요.");
+            System.out.print("종료를 원하시면 'exit', 오래된 계산 기록을 지우고 싶으시면 'y'를 입력해주세요" +
+                    "\n계산을 계속 하신다면 아무 글자를 입력해주세요.");
+            String y = sc.next();
+            if (y.equals("y")) {
+                c.remove();
+                System.out.println("삭제되었습니다");
+                System.out.println("계산기록: " + fHr);
+
+            }
             String exit = sc.next();
             if (exit.equals("exit")) {
                 System.out.println("종료합니다");

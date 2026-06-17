@@ -26,4 +26,10 @@ public class Cal {
     public ArrayList<Double> getrl() {
         return rl;
     }
+
+    public void remove() {
+        if(!rl.isEmpty()) {
+            rl.remove(0);
+        }
+    }
 }
