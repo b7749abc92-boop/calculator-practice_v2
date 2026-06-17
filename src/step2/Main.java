@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Cal c = new Cal();
+        step2.Cal c = new Cal();
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -44,24 +44,36 @@ public class Main {
                 continue;
             }
 
-           double r = c.getca(n1, a, n2);
+            double r = c.getca(n1, a, n2);
 
             System.out.println("계산 결과: " + n1 + a + n2 + " = " + r);
 
             ArrayList<Double> fHr = c.getrl();
             System.out.println("계산기록: " + fHr);
 
-            System.out.print("종료를 원하시면 'exit', 오래된 계산 기록을 지우고 싶으시면 'y'를 입력해주세요" +
-                    "\n계산을 계속 하신다면 아무 글자를 입력해주세요.");
-            String y = sc.next();
-            if (y.equals("y")) {
-                c.remove();
-                System.out.println("삭제되었습니다");
-                System.out.println("계산기록: " + fHr);
+            System.out.println("종료를 원하시면 'exit', 오래된 계산 기록을 지우고 싶으시면 'y'를 입력해주세요");
+            System.out.println("계산을 계속 하신다면 'y' 이외에 아무 글자를 입력해주세요.");
+            String exity;
+            do {
+                exity = sc.next();
+                if (exity.equals("y")) {
+                    if (!fHr.isEmpty()) {
+                        c.remove();
+                        System.out.println("삭제되었습니다");
+                        System.out.println("계산기록: " + fHr);
+                        System.out.println("종료를 원하시면 'exit', 오래된 계산 기록을 지우고 싶으시면 'y'를 입력해주세요");
+                        System.out.println("계산을 계속 하신다면 'y' 이외에 아무 글자를 입력해주세요.");
 
-            }
-            String exit = sc.next();
-            if (exit.equals("exit")) {
+                    } else {
+                        System.out.println("기록이 없습니다.");
+                        System.out.println("계산기록: " + fHr);
+                        System.out.println("종료를 원하시면 'exit'");
+                        System.out.println("계산을 계속 하신다면 'y' 이외에 아무 글자를 입력해주세요.");
+                    }
+                }
+            } while ("y".equals(exity));
+
+            if (exity.equals("exit")) {
                 System.out.println("종료합니다");
                 break;
             }

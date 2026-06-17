@@ -28,8 +28,8 @@ public class Cal {
     }
 
     public void remove() {
-        if(!rl.isEmpty()) {
             rl.remove(0);
-        }
+
+
     }
 }
