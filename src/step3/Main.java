@@ -1,22 +1,22 @@
 package step3;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Cal c = new Cal();
+        Calp c = new Calp();
         Scanner sc = new Scanner(System.in);
         
 
         while (true) {
             System.out.println("첫 번째 숫자를 입력해주세요:");
-            if (!sc.hasNextInt()) {
+            if (!sc.hasNextDouble()) {
                 System.out.println("숫자만 입력 가능합니다.");
                 sc.next();
                 continue;
             }
-            int n1 = sc.nextInt();
+            double n1 = sc.nextDouble();
             if (n1 < 0) {
                 System.out.println("음수는 입력이 불가합니다.");
                 continue;
@@ -24,29 +24,32 @@ public class Main {
 
             System.out.println("연산자(+-*/)를 입력해주세요:");
             char a = sc.next().charAt(0);
-
-
-
+            Em em = Em.fC(a);
+            if (em == null) {
+                continue;
+            }
 
             System.out.println("두 번째 숫자를 입력해주세요:");
-            if (!sc.hasNextInt()) {
+            if (!sc.hasNextDouble()) {
                 System.out.println("숫자만 입력 가능합니다.");
                 sc.next();
                 continue;
             }
-            int n2 = sc.nextInt();
+            double n2 = sc.nextDouble();
             if (n2 < 0) {
                 System.out.println("음수는 입력이 불가합니다.");
                 continue;
             }
+            if (a == '/' && n2 == 0) {
+                System.out.println("0으로는 나눌 수 없습니다.");
+                continue;
+            }
 
-
-
-            double r = c.getcap(n1, a, n2);
+            double r = c.getCap(n1, em, n2);
 
             System.out.println("계산 결과: " + n1 + a + n2 + " = " + r);
 
-            ArrayList<Double> fHr = c.getrlq();
+            List<Double> fHr = c.getrlq();
             System.out.println("계산기록: " + fHr);
 
             System.out.println("종료를 원하시면 'exit', 오래된 계산 기록을 지우고 싶으시면 'y'를 입력해주세요");
