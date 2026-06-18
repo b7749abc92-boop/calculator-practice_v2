@@ -1,4 +1,4 @@
-package step3;
+package step3.v1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +29,9 @@ public class Calp {
     public void removeq() {
         rl.remove(0);
 
+    }
+    public List<Double> gatlamStr(double fkatm) {
+        return rl.stream().filter(b -> b > fkatm).collect(Collectors.toList());
     }
 
 }
