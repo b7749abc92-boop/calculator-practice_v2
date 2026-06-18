@@ -11,7 +11,7 @@ public class Main {
         while (true) {
             System.out.println("첫 번째 숫자를 입력해주세요:");
             if (!sc.hasNextInt()) {
-                System.out.println("숫자만 입력 가능합니다.");
+                System.out.println("숫자 정수만 입력 가능합니다.");
                 sc.next();
                 continue;
             }
@@ -30,7 +30,7 @@ public class Main {
 
             System.out.println("두 번째 숫자를 입력해주세요:");
             if (!sc.hasNextInt()) {
-                System.out.println("숫자만 입력 가능합니다.");
+                System.out.println("숫자 정수만 입력 가능합니다.");
                 sc.next();
                 continue;
             }
