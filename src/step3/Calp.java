@@ -30,5 +30,8 @@ public class Calp {
         rl.remove(0);
 
     }
+    public List<Double> gatlamStr(double fkatm) {
+        return rl.stream().filter(b -> b > fkatm).collect(Collectors.toList());
+    }
 
 }
