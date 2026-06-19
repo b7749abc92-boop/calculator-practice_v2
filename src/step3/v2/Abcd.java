@@ -75,6 +75,11 @@ public class Abcd {
                         if (exityr.equals("r")) {
                             Menuturn = true;
                         }
+                        if ("exit".equals(exityr)) {
+                            System.out.println("프로그램을 종료합니다.");
+                            sc2.close();
+                            System.exit(0);
+                        }
                     } while ("y".equals(exityr));
                     if (Menuturn) {
                         break;

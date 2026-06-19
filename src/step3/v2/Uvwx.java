@@ -63,6 +63,11 @@ public class Uvwx {
             if ("r".equals(Lt)) {
                 break;
             }
+            if ("exit".equals(Lt)) {
+                System.out.println("프로그램을 종료합니다.");
+                sc2.close();
+                System.exit(0);
+            }
         }
 
     }
