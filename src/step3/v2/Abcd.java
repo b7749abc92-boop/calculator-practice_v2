@@ -88,7 +88,7 @@ public class Abcd {
 
             } else if ("2".equals(mn)) {
                 u.getUw(sc2, e);
-            } if ("0".equals(mn)) {
+            } if ("0".equals(mn) || "exit".equals(mn)) {
                 System.out.println("프로그램을 종료합니다");
                 sc2.close();
                 System.exit(0);
